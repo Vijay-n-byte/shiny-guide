@@ -1,0 +1,50 @@
+
+
+<div>
+    <div class="row cop1">
+        <div class="col offset-md-8" style="padding-top: 15px;">
+            <form #gg="ngForm" (ngSubmit)="sample(gg)">
+                <input type="text" placeholder="enter product name to search" name="fooditem" ngModel>
+                <input type="submit">
+            </form>
+
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let g of k">
+            <div class="imgblock">
+                <div *ngIf="!(g.img===null); else elseblock;">
+                    <img src="{{g.img}}" width="120px"><br>
+                </div>
+                <ng-template #elseblock>
+                    <img src="https://www.sherline.com/wp-content/uploads/2016/06/not_available_pic.jpg" width="120px"><br>
+                </ng-template> 
+            </div>
+            <div class="infoblock">
+                <table>
+                    <tr>
+                        <td>name</td>
+                        <td>{{g.productname}}</td>
+                    </tr>
+                    <tr>
+                        <td>description</td>
+                        <td>{{g.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>category</td>
+                        <td>{{g.category}}</td>
+                    </tr>
+                    <tr>
+                        <td>cost</td>
+                        <td>{{g.cost}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="buttonsections">
+                <button (click)="sendtologin()">buy now</button>
+            </div>
+        </div>
+    </div> 
+</div>
+    

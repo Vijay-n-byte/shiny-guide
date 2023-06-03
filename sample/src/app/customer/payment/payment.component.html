@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 mnj">
+            <form>
+                <table>
+                    <tr class="py">
+                        <td>
+                            <label for="name">name</label>
+                        </td>
+                        <td>
+                            <input type="text" name="name" placeholder="name on the card" required>
+                        </td>
+                    </tr>
+                    <tr class="py">
+                        <td>
+                            <label for="cardnumber">cardnumber</label>
+                        </td>
+                        <td>
+                            <input type="text" name="cardnumber" placeholder="xxxx xxxx xxxx" required>
+                        </td>
+                    </tr>
+                    <tr class="py">
+                        <td>
+                            <label for="expirydate">expiry date</label>
+                        </td>
+                        <td>
+                            <input type="text" name="expirydate" placeholder="xx-xxxx" required>
+                        </td>
+                    </tr>
+                    <tr class="py">
+                        <td>
+                            <label for="security">cvv</label>
+                        </td>
+                        <td>
+                            <input type="number" name="security" placeholder="xxx" required>
+                        </td>
+                    </tr>
+                    <tr class="py">
+                        <td>totalprice</td>
+                        <td>{{j}}</td>
+                    </tr>
+                    <tr class="py">
+                        <td>
+                            <button (click)="confirmbooking()">pay</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+</div>

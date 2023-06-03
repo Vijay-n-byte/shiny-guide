@@ -1,0 +1,34 @@
+
+
+
+<div class="container-fluid">
+  <div class="row adna">
+    <div class="col-3">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="adminhome">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="changepass">Account</a>
+        </li>
+      </ul> 
+    </div>
+    <div class="col-8 ">
+      <p style="color:azure; font-size: 30px; margin-left: 140px;">Easy buy pharmacy</p>
+    </div>
+    <div class="col-1">
+      <button style="margin-top: 15px;" (click)="logout()">logout</button>
+
+    </div>
+  </div>
+  <div class="container-fluid jo">
+    <!-- <app-adminhome></app-adminhome> -->
+     <router-outlet></router-outlet>
+  </div>
+  <div class="row adfo">
+    <h5 style="color: azure;"> &#169; copyright 2011</h5>
+  </div>
+</div> 
+
+ 
+

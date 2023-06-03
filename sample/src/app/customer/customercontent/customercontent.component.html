@@ -1,0 +1,82 @@
+<div>
+    <div class="row cop1">
+        <div class="col-1">
+            <!-- <button (click)="filterit()">filter</button> -->
+            <div class="col" style="padding-top: 15px;">
+                <button (click)="openmodal()" class="lmnb">filter</button>
+                <div [class]="op">
+                    <div class="modal1">
+                     <!-- query conditions 1.price 2.category 
+                    {price: '0', category: '0'}-->
+                        <form #gg1="ngForm" (ngSubmit)="filterit(gg1)" class="lpo">
+                            <p>price:</p>
+                            <input type="radio" name="price" id="p1" value="0" ngModel required>
+                            <label for="p1">price below 500</label><br>
+                            <input type="radio" name="price" id="p2" value="1" ngModel required>
+                            <label for="p2">price above 500</label><br>
+                            <input type="radio" name="price" id="p3" value="2" ngModel required>
+                            <label for="p3">All</label><br>
+                            
+                            <p>category:</p>
+                            <input type="radio" name="category" id="c1" value="0" ngModel required>
+                            <label for="c1">painrelief and fever</label><br>
+                            <input type="radio" name="category" id="c2" value="1" ngModel required>
+                            <label for="c2">nostril care</label><br>
+                            <input type="radio" name="category" value="2" id="c3" ngModel required>
+                            <label for="c3">heachache</label><br>
+                            <input type="radio" name="category" value="3" id="c4" ngModel required>
+                            <label for="c4">cold</label><br>
+                            <input type="submit">
+                        </form>
+                        <!-- <button (click)="filterit()">All</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col offset-md-8" style="padding-top: 15px;">
+            <form #gg="ngForm" (ngSubmit)="sample(gg)">
+                <input type="text" placeholder="enter product name to search" name="fooditem" ngModel>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let g of k">
+            <div class="imgblock">
+                <div *ngIf="!(g.img===null); else elseblock;">
+                    <img src="{{g.img}}" width="120px"><br>
+                </div>
+                <ng-template #elseblock>
+                    <img src="https://www.sherline.com/wp-content/uploads/2016/06/not_available_pic.jpg" width="120px"><br>
+                </ng-template>
+            </div>
+            <div class="infoblock">
+                <table>
+                    <tr>
+                        <td>name</td>
+                        <td>{{g.productname}}</td>
+                    </tr>
+                    <tr>
+                        <td>description</td>
+                        <td>{{g.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>category</td>
+                        <td>{{g.category}}</td>
+                    </tr>
+                    <tr>
+                        <td>cost</td>
+                        <td>{{g.cost}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="buttonsections">
+                <form #sam="ngForm" (ngSubmit)="addtocart(sam,g.productno)">
+                    Quantity :<input type="number" name="quantity" ngModel required>
+                    <input type="submit" value="Add to cart">
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+    

@@ -1,0 +1,14 @@
+<form #formi="ngForm" (ngSubmit)="submitvalue(formi)">
+     <label for="productname">productname:</label><br>
+    <input class="in" type="text" name="productname" ngModel required><br> 
+     <label for="description">description:</label><br>
+    <input class="in" type="text" name="description" ngModel required><br>
+    <label for="cost">cost:</label><br>
+    <input type="number" name="cost" ngModel required><br>
+    <label for="category">category:</label><br>
+    <input type="text" name="category" ngModel required><br>
+    <input type="submit" name="submit">
+</form>
+
+<!-- <label for="img">image:</label>
+<input type="file" name="img" accept="image/jpeg, image/png" ngModel (change)="onFileSelected($event)" required><br>  -->

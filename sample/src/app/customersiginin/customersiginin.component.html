@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+            <form [formGroup]="userform" (ngSubmit)="submited(userform)">
+                <div class="form-group">
+                    <label for="name"></label>
+                    <input class="po" type="text" formControlName="name" class="form-control" placeholder="name" required>
+                    <div>
+                        <div *ngIf="(userform.get('name')?.touched && userform.get('name')?.invalid); else elseBlock">
+                            <!-- <p style="font-size: 12px;color:red">error</p> -->
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('name')?.errors?.['required']">required name</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('name')?.errors?.['minlength']">need atleast 5 characters</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('name')?.errors?.['maxlength']">need only 10 characters</p> 
+                        </div>
+                        <ng-template #elseBlock>
+                            <p style="font-size: 12px;color:white">no error</p>
+                        </ng-template>
+                    </div>
+                </div> 
+                <div class="form-group"> 
+                    <label for="address"></label>
+                    <input type="text" formControlName="address" class="form-control" placeholder="address" required>
+                    <div>
+                        <div *ngIf="userform.get('address')?.touched && userform.get('address')?.invalid; else elseBlock">
+                            <p style="font-size: 12px;color:red;">required address</p> 
+                        </div>
+                        <ng-template #elseBlock>
+                            <p style="font-size: 12px;color:white">no error</p>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="form-group"> 
+                    <label for="phonenumber"></label>
+                    <input type="text" formControlName="phonenumber" class="form-control" placeholder="phonenumber" required>
+                    <div>
+                        <div *ngIf="userform.get('phonenumber')?.touched && userform.get('phonenumber')?.invalid; else elseBlock">
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('phonenumber')?.errors?.['required']">required phonenumber</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('phonenumber')?.errors?.['minlength']">need atleast 5 characters</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('phonenumber')?.errors?.['maxlength']">need only 10 characters</p> 
+                        </div>
+                        <ng-template #elseBlock>
+                            <p style="font-size: 12px;color:white">no error</p>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="adhaarno"></label>
+                    <input class="po" type="text" formControlName="adhaarno" class="form-control" placeholder="adhaarno" required>
+                    <div>
+                        <div *ngIf="(userform.get('adhaarno')?.touched && userform.get('adhaarno')?.invalid); else elseBlock">
+                            <!-- <p style="font-size: 12px;color:red">error</p> -->
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('adhaarno')?.errors?.['required']">required name</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('adhaarno')?.errors?.['minlength']">need atleast 5 characters</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('adhaarno')?.errors?.['maxlength']">need only 10 characters</p> 
+                        </div>
+                        <ng-template #elseBlock>
+                            <p style="font-size: 12px;color:white">no error</p>
+                        </ng-template>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="username"></label>
+                    <input class="po" type="text" formControlName="username" class="form-control" placeholder="username" required>
+                    <div>
+                        <div *ngIf="(userform.get('username')?.touched && userform.get('username')?.invalid); else elseBlock">
+                            <!-- <p style="font-size: 12px;color:red">error</p> -->
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('username')?.errors?.['required']">required name</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('username')?.errors?.['minlength']">need atleast 5 characters</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('username')?.errors?.['maxlength']">need only 10 characters</p> 
+                        </div>
+                        <ng-template #elseBlock>
+                            <p style="font-size: 12px;color:white">no error</p>
+                        </ng-template>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="password"></label>
+                    <input class="po" type="password" formControlName="password" class="form-control" placeholder="password" required>
+                    <div>
+                        <div *ngIf="(userform.get('password')?.touched && userform.get('password')?.invalid); else elseBlock">
+                            <!-- <p style="font-size: 12px;color:red">error</p> -->
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('password')?.errors?.['required']">required name</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('password')?.errors?.['minlength']">need atleast 5 characters</p> 
+                            <p style="font-size: 12px;color:red;" *ngIf="userform.get('password')?.errors?.['maxlength']">need only 10 characters</p> 
+                        </div>
+                        <ng-template #elseBlock>
+                            <p style="font-size: 12px;color:white">no error</p>
+                        </ng-template>
+                    </div>
+                </div> 
+                
+                <input type="submit" value="signin" class="form-control btn" [disabled]="userform.invalid">
+            </form>
+        </div>
+    </div> 
+</div>
+
+

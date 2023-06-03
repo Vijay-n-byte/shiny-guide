@@ -1,0 +1,52 @@
+<div class="hhhh">
+    <div class="row">
+        <div class="col">
+            <button (click)="openmodal()" class="lmnb">Add</button>
+            <div [class]="op">
+                <div class="modal1">
+                    <app-popupadd></app-popupadd>
+                    <button (click)="closemodal()" class="do">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead class="table-row">
+                    <td class="table-cell">product number</td>
+                    <td class="table-cell">product image</td>
+                    <td class="table-cell">product name</td>
+                    <td class="table-cell ">product description</td>
+                    <td class="table-cell ">category</td>
+                    <td class="table-cell">cost</td>
+                    <td class="table-cell"> update</td>
+                    <td class="table-cell">delete</td>
+                </thead>
+                <tbody class="table-row" *ngFor="let h of k">
+                    <td class="table-cell">{{h.productno}}</td>
+                    <td class="table-cell">
+                        <img src="{{h.img}}" width="150px"><br>
+                        <form ngForm *ngIf="h.img===null">
+                            <input type="file" name="h.productno" accept="image/jpeg, image/png" (change)="onFileSelected($event,h.productno)" ngModel>
+                        </form>
+                    </td>
+                    <td class="table-cell">{{h.productname}}</td>
+                    <td class="table-cell">{{h.description}}</td>
+                    <td class="table-cell">{{h.category}}</td>
+                    <td class="table-cell">{{h.cost}}</td>
+                    <td class="table-cell"><button>update</button></td>
+                    <!-- <td class="table-cell"><button (click)="deleteit(h.productno)">delete</button></td> -->
+                    <td class="table-cell">
+                      <label class="switch">
+                        <input type="checkbox" (change)="deleteit(h.productno)" checked>
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

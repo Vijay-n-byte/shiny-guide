@@ -1,0 +1,55 @@
+<div>
+    <div class="row cop1">
+        
+    </div>
+    <div *ngIf="r!=null; else elseBlock">
+        <div class="row cop">
+            <div class="col-lg-6 offset-lg-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>image</td>
+                            <td>name</td>
+                            <td>category</td>
+                            <td>cost</td>
+                            <td>quantity</td>
+                        </tr>
+        
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let kk of r.pp">
+                            <td><img src={{kk.k.pro.img}} width="120px"></td>
+                           <td>{{kk.k.pro.productname}}</td>
+                            <td>{{kk.k.pro.category}}</td>
+                            <td>{{kk.cost}}</td>
+                            <td>{{kk.quantity}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+    
+            </div>
+        </div>
+        <div>
+            <div class="row lur">
+                <div class="col">
+                    <h6>Total cost:{{r.totalcost}}</h6>
+                </div>
+            </div>
+            <div class="row lur">
+                <div class="col">
+                    <button (click)="proceedtopay()">proceed to pay</button>
+                </div>
+            </div>
+
+        </div>
+        
+
+
+    </div>
+    <ng-template #elseBlock>
+        <p style="font-size: 35px;color:red;text-align: center;">cart is empty</p>
+    </ng-template>
+    
+    
+</div>
