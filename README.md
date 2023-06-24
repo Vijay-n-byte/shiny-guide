@@ -2,6 +2,9 @@
 
 It is a medicine booking application.No type of security is implemented here.
 
+medicinewebsite------>backened springboot eclipse project.
+sample--------------->frontened angular typescript project.
+
 Tools used:
 
 Backened:Springboot More than 10 APIs are created to facilitate the usecases of the project. DTOs ,service layer ,repository layer are utilised.
